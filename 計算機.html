@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="
+    default-src 'self'; script-src 'self'"> -->
+    <title>你是朱!</title>
+  </head>
+  <body>
+
+    <button onclick="ceenel()">
+      AC
+    </button>
+
+    <button onclick="number('1')">
+      1
+    </button>
+
+    <button onclick="number('2')">
+      2
+    </button>
+
+    <button onclick='number("3")'>
+      3
+    </button>
+
+    <button onclick="number('4')">
+      4
+    </button>
+
+    <button onclick="number('5')">
+      5
+    </button>
+
+    <button onclick="number('6')">
+      6
+    </button>
+
+    <button onclick="number('7')">
+      7
+    </button>
+
+    <button onclick="number('8')">
+      8
+    </button>
+
+    <button onclick="number('9')">
+      9
+    </button>
+    
+    <button onclick="number('0')">
+      0
+    </button>
+
+    <button onclick="types('+')">
+      +
+    <button onclick="types('-')">
+      -
+    <button onclick="types('*')">
+      *
+    <button onclick="types('/')">
+      /
+    </button>
+    <button onclick="results()">
+      =
+    </button>
+    <label>顯示</label>
+    <input id="result" readonly value="0">
+    <script>
+      var result =  document.querySelector("#result");
+      console.log(result.value)
+      var Ttypes = false,resultype = false;
+      var t1="",t2="" ;
+      var Ntype;
+      function ceenel(){
+        Ttypes = false;
+        resultype = false;
+        t1="",t2="" ;
+        result.value = 0 ;
+        console.log("刷新");
+      }
+      function types(type){
+        Ttypes = true;
+        Ntype = type;
+      }
+      
+      function results(){
+        console.log(typeof(t2),typeof(result.value))
+        if(resultype == false)
+           result.value = t1;
+        if(Ntype != undefined){
+          switch(Ntype){
+            case '+':
+              result.value =  parseInt(result.value) + parseInt(t2);
+            break;
+            case '*':
+              result.value =  parseInt(result.value) * parseInt(t2);
+            break;
+            case '-':
+              result.value =  parseInt(result.value) - parseInt(t2);
+            break;
+            case '/':
+              result.value =  parseInt(result.value) / parseInt(t2);
+            break;
+          }
+        }
+        resultype = true;
+      }
+      function number(en){
+        switch(Ttypes){
+          case true:
+            t2+=en;
+            result.value = t2;
+          break;
+          case false:
+            t1+=en;
+            result.value =t1;
+          break;
+        }
+      }
+
+    </script>
+    <!-- <h1>你好h1</h1>
+    <h2>你好h2</h2>
+    <h3>你好h3</h3>
+    <h4>你好h4</h4>
+    <h5>你好h5</h5>
+    <h6>你好h6</h6>
+    <h2>你好h2</h2>
+        <h1>峻 瑋 好 胖</h1> 
+        <h5>宜 玲 好 瘦    </h5>
+        <span id="node-version"></span>,Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+<h1>Hello Electron</h1>
+<p>Node Version
+<script>document.write(process.versions.node)</script>
+</p>
+<p>Chrom Version
+<script>document.write(process.versions.chrome)</script>
+</p>
+<p>Electron Version:
+<script>document.write(process.versions.electron)</script>
+</p>
+<hr>
+    <div class="now-time">原本</div>
+    <input type="text" class="alarm-time" value="">
+    <script src="app.js"></script> -->
+  </body>
+</html>
