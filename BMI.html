@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="
+    default-src 'self'; script-src 'self'"> -->
+    <title>BMI計算機</title>
+  </head>
+  <body>
+    <input id="high"placeholder="身高">
+    <input id="kg"placeholder="體重">
+    <button onclick="start()">計算<button>
+    <label>BMI<label> 
+    <input id="result" readonly value>
+    <script>
+      var result =  document.querySelector("#result");
+      var high =  document.querySelector("#high");
+      var kg =  document.querySelector("#kg");
+      console.log(result)
+      var Ttypes = false,resultype = false;
+      //var high="",kg="" ;
+      var Ntype= '/';
+      function ceenel(){
+       
+      }
+      function types(type){
+        Ttypes = true;
+        Ntype = type;
+      }
+      function results(){
+        console.log(typeof(kg),typeof(result.value))
+        switch(Ntype){
+        case'/':
+        result.value = parseInt(result.value)/parseInt(kg*kg);
+        break;
+     }
+    }
+     function start(){
+        console.log(kg.value,high.value/100)//取整數 無條件捨去
+        switch(Ntype){
+         case'/':
+         result.value = parseInt(kg.value)/((high.value/100)*(high.value/100));
+         break;
+    //var h =  document.querySelector("#xxx");
+    // h.value
+     }
+    }
+    </script> -->
+  </body>
+</html>
